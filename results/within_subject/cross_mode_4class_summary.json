@@ -1,0 +1,98 @@
+{
+  "task": "within-subject word decoding, same-mode and cross-mode",
+  "words": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "classes": 4,
+  "chance_pct": 25.0,
+  "n_train_per_slot": 640,
+  "n_test_per_slot": 160,
+  "protocol": "first 160 train and last 40 test trials per word and slot; CAR, 0.2-1.8 s Hann FFT log-bandpower, train-only StandardScaler, LogisticRegression(C=0.1)",
+  "subject_slots": "provisional consecutive 200-row groups; source participant IDs absent",
+  "limitation": "chronological split within contiguous 200-trial word blocks; for words 5-8, word 5 belongs to the first 5-word recording group and words 6-8 to the second (personal communication with the dataset research team)",
+  "summary": [
+    {
+      "band": "4-30 Hz",
+      "direction": "overt->overt",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 93.12,
+      "sd_pct": 7.24,
+      "min_pct": 75.0,
+      "max_pct": 99.38
+    },
+    {
+      "band": "4-30 Hz",
+      "direction": "overt->mime",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 58.38,
+      "sd_pct": 12.0,
+      "min_pct": 39.37,
+      "max_pct": 76.88
+    },
+    {
+      "band": "4-30 Hz",
+      "direction": "mime->mime",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 96.31,
+      "sd_pct": 6.34,
+      "min_pct": 78.75,
+      "max_pct": 100.0
+    },
+    {
+      "band": "4-30 Hz",
+      "direction": "mime->overt",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 73.38,
+      "sd_pct": 17.05,
+      "min_pct": 49.38,
+      "max_pct": 100.0
+    },
+    {
+      "band": "30-45 Hz",
+      "direction": "overt->overt",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 92.62,
+      "sd_pct": 7.84,
+      "min_pct": 75.0,
+      "max_pct": 100.0
+    },
+    {
+      "band": "30-45 Hz",
+      "direction": "overt->mime",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 55.75,
+      "sd_pct": 13.49,
+      "min_pct": 33.12,
+      "max_pct": 77.5
+    },
+    {
+      "band": "30-45 Hz",
+      "direction": "mime->mime",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 96.38,
+      "sd_pct": 7.77,
+      "min_pct": 74.38,
+      "max_pct": 100.0
+    },
+    {
+      "band": "30-45 Hz",
+      "direction": "mime->overt",
+      "n_classes": 4,
+      "chance_pct": 25.0,
+      "mean_pct": 73.56,
+      "sd_pct": 15.66,
+      "min_pct": 51.25,
+      "max_pct": 100.0
+    }
+  ]
+}

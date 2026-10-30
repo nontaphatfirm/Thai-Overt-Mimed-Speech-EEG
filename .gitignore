@@ -1,0 +1,27 @@
+# Dataset (Download from https://data.mendeley.com/datasets/yzts9t69r2/1)
+Thai Overt-Mimed Speech EEG Dataset/
+*.npz
+
+# Local backup / archive of legacy exploratory files & restricted documents
+backup/
+Document/
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
