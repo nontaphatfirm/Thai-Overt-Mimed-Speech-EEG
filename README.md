@@ -106,7 +106,18 @@ pip install -r requirements.txt
 4. **Time Windowing**: Crop active speech interval `0.2–1.8 s` (`samples 102:922`).
 5. **Signal Normalization**: Per-trial Z-score (within-subject `EEGNet`) or train-only `StandardScaler` (cross-mode and strict LOSO).
 
-### 2. Exploratory Within-Subject Evaluation (`words = [5, 6, 7, 8]`)
+### 2. Model Selection & Hyperparameter Strategy
+- **Within-Subject Decoding (`EEGNet`)**:
+  - **Architecture Choice**: `EEGNet` (Lawhern et al., 2018), a compact CNN specialized for raw EEG time-series using depthwise and separable convolutions to learn spatial and temporal filters with minimal parameters.
+  - **Hyperparameters**: Temporal filters $F_1 = 8$, depth multiplier $D = 2$ ($F_2 = 16$), temporal kernel length $= 256$ (500 ms at 512 Hz), dropout $= 0.25$.
+  - **Training Setup**: Adam optimizer ($\text{lr} = 10^{-3}$), cross-entropy loss, batch size $= 32$, 100 epochs, per-trial Z-score normalization.
+- **Cross-Mode & Cross-Subject LOSO (Linear Baselines)**:
+  - **Model Choice**: Linear models on Hann-windowed FFT log-bandpower features were selected over deep networks to avoid overfitting to subject-specific signatures, ensure reproducible evaluation across 180 word pairs $\times$ 10 folds, and provide transparent baselines.
+  - **Hyperparameters & Regularization**:
+    - **Logistic Regression ($C=0.1$)**: L2-regularized logistic regression with tuned $C=0.1$ to penalize high weights across correlated multi-channel bandpower features.
+    - **Shrinkage LDA (`shrinkage="auto"`)**: Linear Discriminant Analysis with Ledoit-Wolf automatic covariance shrinkage to stabilize ill-conditioned spatial covariance matrices across 32 EEG channels.
+
+### 3. Exploratory Within-Subject Evaluation (`words = [5, 6, 7, 8]`)
 - **Frequency-Band `EEGNet` (4 Classes, Chance = 25%, Chronological 64% Train / 16% Val / 20% Test per Word Block)**:
 
 | Frequency Band | Overt (Mean ± SD) | Mimed (Mean ± SD) |
@@ -129,7 +140,7 @@ pip install -r requirements.txt
 
 > **Interpretation Limit (Within-Subject)**: Because trials for each word are stored in a single contiguous 200-trial block (and `word_05` belongs to the first 5-word recording group while `words 06–08` belong to the second; personal communication with the dataset research team), high within-subject accuracy and post-ICA retention reflect **within-block and recording-group discriminability** rather than isolated semantic neural representations or guaranteed complete EMG removal. Similarly, the descriptive asymmetry between `Mimed → Overt` and `Overt → Mimed` cannot be attributed to a single neural mechanism without unconfounded cross-session data.
 
-### 3. Cross-Subject Strict LOSO, Confound Diagnostics & Few-Shot Calibration
+### 4. Cross-Subject Strict LOSO, Confound Diagnostics & Few-Shot Calibration
 - **Zero-Calibration Strict LOSO (80 Same-Half Word Pairs, Chance = 50%)**:  
   Evaluated across all 80 word pairs within the same 5-word recording group (`same_half=True`), fitting all scalers and classifiers strictly on the 9 training slots:
 
