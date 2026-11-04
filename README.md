@@ -177,7 +177,7 @@ pip install -r requirements.txt
 - **Author**: **[Nontapat Auetrongjit (Firm)](https://github.com/nontaphatfirm)**  
   Computer Engineering and Digital Technology (CEDT), Chulalongkorn University  
   Participant, **[Brain Code Camp (BCC)](https://braincode101.github.io/)**
-- **Blog Post on Medium (Thai)**: [Thai Overt & Mimed Speech EEG](https://medium.com/@nontaphatfirm/thai-overt-mimed-speech-eeg-3207c127b06e)
-- **Presentation Deck**: [`Slide/Final Thai Overt-Mimed Speech EEG Present.pdf`](Slide/Final%20Thai%20Overt-Mimed%20Speech%20EEG%20Present.pdf)
+- **Blog Post on Medium (Thai)**: **[Thai Overt & Mimed Speech EEG](https://medium.com/@nontaphatfirm/thai-overt-mimed-speech-eeg-3207c127b06e)**
+- **Blog Post (PDF)**: [`Slide/Thai_Overt_Mimed_Speech_EEG.pdf`](Slide/Thai_Overt_Mimed_Speech_EEG.pdf)
 
 ---
