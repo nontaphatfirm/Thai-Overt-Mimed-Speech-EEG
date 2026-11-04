@@ -6,7 +6,7 @@ EEG signal processing and word-decoding pipeline for **Overt Speech** (vocalized
 > 📝 **Blog Post on Medium (Thai)**: **[Thai Overt & Mimed Speech EEG](https://medium.com/@nontaphatfirm/thai-overt-mimed-speech-eeg-3207c127b06e)**
 
 ---
-![Thai Overt & Mimed Speech EEG](Slide\cover.png)
+![Thai Overt & Mimed Speech EEG](Slide/cover.png)
 
 ## Dataset & Methodological Scope
 
