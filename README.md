@@ -3,9 +3,10 @@
 EEG signal processing and word-decoding pipeline for **Overt Speech** (vocalized) and **Mimed Speech** (silent articulation) in Thai. This repository covers signal preprocessing, exploratory within-subject decoding (`EEGNet`), artifact decomposition (`Picard ICA + ICLabel`), within-subject cross-mode transfer (`Overt ↔ Mimed`), strict cross-subject Leave-One-Subject-Slot-Out (`LOSO`) evaluation, dataset confound diagnostics, and few-shot calibration.
 
 > Developed as part of the **[Brain Code Camp (BCC)](https://braincode101.github.io/)** program.  
-> 📝 **Blog Post on Medium (Thai)**: [Thai Overt & Mimed Speech EEG](https://medium.com/@nontaphatfirm/thai-overt-mimed-speech-eeg-3207c127b06e)
+> 📝 **Blog Post on Medium (Thai)**: **[Thai Overt & Mimed Speech EEG](https://medium.com/@nontaphatfirm/thai-overt-mimed-speech-eeg-3207c127b06e)**
 
 ---
+![Thai Overt & Mimed Speech EEG](Slide\cover.png)
 
 ## Dataset & Methodological Scope
 
